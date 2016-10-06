@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.beenleigh.lemma.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.beenleigh.lemma.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: com.beenleigh.lemma,
+ com.beenleigh.lemma.ide,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtend.lib;resolution:=optional,
+ org.eclipse.xtext.xbase.lib
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.beenleigh.dsl.ui.quickfix,
+ com.beenleigh.lemma.ui.internal,
+ com.beenleigh.dsl.ui.contentassist
+Bundle-Activator: com.beenleigh.lemma.ui.internal.LemmaActivator

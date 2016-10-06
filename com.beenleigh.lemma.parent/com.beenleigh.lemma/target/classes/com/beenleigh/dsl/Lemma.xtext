@@ -1,0 +1,49 @@
+grammar com.beenleigh.dsl.Lemma with org.eclipse.xtext.common.Terminals
+
+generate lemma "http://www.beenleigh.com/dsl/Lemma"
+
+Lemmamodel :
+	(elements += AbstractItem)*
+;
+
+
+DataModel:
+	'DataModel' name = QualifiedName '{'
+	(elements += AbstractItem)*
+	'}'
+;
+
+AbstractItem:
+	DataModel | DataClass | DataType | Import
+;
+
+QualifiedName:
+		ID('.' ID)*
+;
+
+Import:
+	'import' importedNamespace = QualifiedNameWithWildcard
+;
+
+QualifiedNameWithWildcard:
+	QualifiedName '.*'?
+;
+
+
+DataType:
+	'datatype' name = ID
+;
+
+ContainerElement:
+	DataClass| DataElement
+;
+
+DataClass:
+	'DataClass' name = ID ('extends' superType = [DataClass])? '{'
+	  (dataelements += ContainerElement)*
+	  '}'
+;
+
+DataElement:
+	'DataElement' name = ID ':' type = [DataType|QualifiedName]
+;

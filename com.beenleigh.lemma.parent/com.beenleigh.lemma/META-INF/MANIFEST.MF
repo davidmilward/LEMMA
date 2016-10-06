@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: com.beenleigh.lemma
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.beenleigh.lemma; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: com.beenleigh.dsl.parser.antlr,
+ com.beenleigh.dsl.generator,
+ com.beenleigh.dsl.lemma,
+ com.beenleigh.dsl.serializer,
+ com.beenleigh.dsl,
+ com.beenleigh.dsl.validation,
+ com.beenleigh.dsl.scoping,
+ com.beenleigh.dsl.parser.antlr.internal,
+ com.beenleigh.dsl.lemma.util,
+ com.beenleigh.dsl.services,
+ com.beenleigh.dsl.lemma.impl
+Import-Package: org.apache.log4j
